@@ -1,0 +1,25 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+add	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vectors.py	/^def add(*vectors):$/;"	f	language:Python
+Arrow	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vector_drawing.py	/^class Arrow():$/;"	c	language:Python
+black	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vector_drawing.py	/^black = 'k'$/;"	v	language:Python
+blue	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vector_drawing.py	/^blue = 'C0'$/;"	v	language:Python
+distance	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vectors.py	/^def distance(v1, v2):$/;"	f	language:Python
+gray	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vector_drawing.py	/^gray = 'gray'$/;"	v	language:Python
+green	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vector_drawing.py	/^green = 'C2'$/;"	v	language:Python
+length	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vectors.py	/^def length(v):$/;"	f	language:Python
+orange	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vector_drawing.py	/^orange = 'C2'$/;"	v	language:Python
+perimeter	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vectors.py	/^def perimeter(vectors):$/;"	f	language:Python
+Points	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vector_drawing.py	/^class Points():$/;"	c	language:Python
+Polygon	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vector_drawing.py	/^class Polygon():$/;"	c	language:Python
+purple	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vector_drawing.py	/^purple = 'C4'$/;"	v	language:Python
+red	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vector_drawing.py	/^red = 'C3'$/;"	v	language:Python
+scale	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vectors.py	/^def scale(scalar, v):$/;"	f	language:Python
+Segment	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vector_drawing.py	/^class Segment():$/;"	c	language:Python
+subtract	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vectors.py	/^def subtract(v1, v2):$/;"	f	language:Python
+to_cartesian	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vectors.py	/^def to_cartesian(polar_vectors):$/;"	f	language:Python
+to_polar	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vectors.py	/^def to_polar(vector):$/;"	f	language:Python
+translate	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vectors.py	/^def translate(translation, vectors):$/;"	f	language:Python
+__init__	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vector_drawing.py	/^    def __init__(self, *vectors, color = black):$/;"	m	language:Python	class:Points
+__init__	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vector_drawing.py	/^    def __init__(self, *vertices, color = blue, fill = None, alpha = 0.4):$/;"	m	language:Python	class:Polygon
+__init__	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vector_drawing.py	/^    def __init__(self, start_point, end_point, color = blue):$/;"	m	language:Python	class:Segment
+__init__	/home/sergio/Documents/GitHub/Mathematics-for-programmers/vector_drawing.py	/^    def __init__(self, tip, tail = (0, 0), color = red):$/;"	m	language:Python	class:Arrow
