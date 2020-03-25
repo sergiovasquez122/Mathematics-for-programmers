@@ -34,6 +34,9 @@ def scale_by(scalar):
         return scale(scalar, v)
     return new_function
 
+def identity(v):
+    return v
+
 def translate_by(translation):
     def new_function(v):
         return add(translation,v)
