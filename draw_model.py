@@ -7,6 +7,7 @@ from camera import Camera
 from vectors import *
 from math import *
 from transforms import *
+from matrices import *
 
 def normal(face):
     return(cross(subtract(face[1], face[0]), subtract(face[2], face[0])))
