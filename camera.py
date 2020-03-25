@@ -25,7 +25,7 @@ class Camera():
         self.window = window
 
     def is_shooting(self):
-        print(self.shots, self.remaining_shots, self.made_comic_strip, self.comic_strip)
+        # print(self.shots, self.remaining_shots, self.made_comic_strip, self.comic_strip)
         if self.shots and not self.remaining_shots and (self.made_comic_strip or not self.comic_strip):
             return False
         else:
@@ -58,7 +58,7 @@ class Camera():
         for i,im in enumerate(images):
             x_offset = (i % self.comic_strip) * width
             y_offset = (i / self.comic_strip) * height
-            print('offsets',(x_offset,y_offset))
+            # print('offsets',(x_offset,y_offset))
             new_im.paste(im, (x_offset,y_offset))
 
         new_im.save(os.path.join(self.dir, self.name +'_comic_strip.png'))
@@ -79,18 +79,18 @@ class Camera():
             idx = self.shots.index(self.remaining_shots[0])
             self.remaining_shots.pop(0)
 
-        print('taking shot', idx)
+        # print('taking shot', idx)
         image_name = os.path.join(self.dir, self.name + str(idx) + ".png")
         save(self.window, image_name)
 
     def tick(self):
         res = self.clock.tick()
         self.total_ticks += res
-        print("tick", self.total_ticks, self.remaining_shots)
+        # print("tick", self.total_ticks, self.remaining_shots)
         if self.should_shoot():
             self.shoot()
         elif self.comic_strip and not self.made_comic_strip and not self.remaining_shots:
-            print('making comic strip')
+            # print('making comic strip')
             self.make_comic_strip()
         return res
 

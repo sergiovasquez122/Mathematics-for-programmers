@@ -16,26 +16,23 @@ blues = matplotlib.cm.get_cmap('Blues')
 def shade(face,color_map=blues,light=(1,2,3)):
     return color_map(1 - dot(unit(normal(face)), unit(light)))
 
-
-# def Axes():
-#     axes =  [
-#         [(-1000,0,0),(1000,0,0)],
-#         [(0,-1000,0),(0,1000,0)],
-#         [(0,0,-1000),(0,0,1000)]
-#     ]
-#     glBegin(GL_LINES)
-#     for axis in axes:
-#         for vertex in axis:
-#             glColor3fv((1,1,1))
-#             glVertex3fv(vertex)
-#     glEnd()
-
+def Axes():
+    axes =  [
+        [(-1000,0,0),(1000,0,0)],
+        [(0,-1000,0),(0,1000,0)],
+        [(0,0,-1000),(0,0,1000)]
+    ]
+    glBegin(GL_LINES)
+    for axis in axes:
+        for vertex in axis:
+            glColor3fv((1,1,1))
+            glVertex3fv(vertex)
+    glEnd()
 
 def draw_model(faces, color_map=blues, light=(1,2,3),
                 camera=Camera("default_camera",[]),
                 glRotatefArgs=None,
-                transform=None):
-    print("camera", camera.name)
+                get_matrix=None):
     pygame.init()
     display = (400,400)
     window = pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
@@ -56,9 +53,15 @@ def draw_model(faces, color_map=blues, light=(1,2,3),
                 quit()
 
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
-        # Axes()
+        Axes()
         glBegin(GL_TRIANGLES)
-        transformed_faces = polygon_map(transform(camera.total_ticks), faces) if transform else faces
+        def do_matrix_transform(v):
+            if get_matrix:
+                m = get_matrix(pygame.time.get_ticks())
+                return multiply_matrix_vector(m, v)
+            else:
+                return v
+        transformed_faces = polygon_map(do_matrix_transform, faces)
         for face in transformed_faces:
             color = shade(face,color_map,light)
             for vertex in face:
@@ -67,4 +70,3 @@ def draw_model(faces, color_map=blues, light=(1,2,3),
         glEnd()
         camera.tick()
         pygame.display.flip()
-        print(camera.get_fps())

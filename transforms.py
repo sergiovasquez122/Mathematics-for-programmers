@@ -77,8 +77,5 @@ B = (
 
 v = (1,-2,-2)
 
-def multiply_matrix_vector(matrix, vector):
-    return linear_combination(vector, *zip(*matrix))
-
 def transform_standard_basis(transform):
     return transform((1,0,0)), transform((0,1,0)), transform((0,0,1))

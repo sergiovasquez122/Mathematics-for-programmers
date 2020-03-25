@@ -1,3 +1,6 @@
+from transforms import *
+from math import pi
+
 with open("teapot.off") as f:
     lines = f.readlines()
 
@@ -9,15 +12,15 @@ def triple(xs):
 def load_vertices():
     vertices = []
     for i in range(2,2+vertex_count):
-        v = triple(list(map(float,lines[i].split())))
-        vertices.append(v)
+        v = triple(map(float,lines[i].split()))
+        vertices.append(scale_by(2)(rotate_x_by(-pi/2)(translate_by((-0.5,0,-0.6))(v))))
     return vertices
 
 def load_polygons():
     polys = []
     vertices = load_vertices()
     for i in range(2+vertex_count,2+vertex_count+face_count):
-        poly = list(map(vertices.__getitem__, list(map(int,lines[i].split()[1:]))))
+        poly = map(vertices.__getitem__, map(int,lines[i].split()[1:]))
         polys.append(poly)
     return polys
 
