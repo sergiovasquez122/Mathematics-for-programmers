@@ -42,13 +42,13 @@ def segment_checks(s1,s2):
 def do_segments_intersect(s1,s2):
     u1,u2 = s1
     v1,v2 = s2
-    d1, d2 = distance(*s1), distance(*s2)
+    l1, l2 = distance(*s1), distance(*s2)
     try:
         x,y = intersection(u1,u2,v1,v2)
-        return (distance(u1, (x,y)) <= d1 and
-                distance(u2, (x,y)) <= d1 and
-                distance(v1, (x,y)) <= d2 and
-                distance(v2, (x,y)) <= d2)
+        return (distance(u1, (x,y)) <= l1 and
+                distance(u2, (x,y)) <= l1 and
+                distance(v1, (x,y)) <= l2 and
+                distance(v2, (x,y)) <= l2)
     except np.linalg.linalg.LinAlgError:
         return False
 
